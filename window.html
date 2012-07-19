@@ -1,0 +1,80 @@
+<html>
+<head>
+	<style type="text/css" media="screen">
+		@import url("./styles/main.css");
+	</style>
+	<script type="text/javascript" src="./dependencies/PokkiConfig.js"></script>		
+	<script type="text/javascript" src="./dependencies/PokkiTools.js"></script>
+	<script type="text/javascript" src="./dependencies/PokkiTemplate.js"></script>		
+	<script type="text/javascript" src="./dependencies/PokkiGalaxy.js"></script>		
+	<script type="text/javascript" src="./dependencies/JStore.js"></script>		
+	<script type="text/javascript" src="./dependencies/Nickel.js"></script>		
+	<script type="text/javascript" src="./dependencies/SmoothScroll.js"></script>		
+	<script type="text/javascript" src="./views/window.js"></script>		
+	<script type="text/javascript" src="./controllers/UI.js"></script>		
+	<script type="text/javascript" src="./controllers/Login.js"></script>		
+	<script type="text/javascript" src="./controllers/Events.js"></script>		
+	<script type="text/javascript" src="./controllers/Threads.js"></script>		
+	<script type="text/javascript" src="./controllers/Data.js"></script>		
+	<script type="text/javascript" src="./models/Thread.js"></script>		
+    <script type="text/javascript" src="./models/Page.js"></script>       
+</head>
+<body>
+<div id="dim"></div>
+<div id="loginform" class="hide">
+    <div id="login_ph" class="placeholder">login</div>
+    <div id="passwd_ph" class="placeholder">password</div>
+    <input type="text" name="login_login" id="login_login" />
+    <input type="password" name="login_passwd" id="login_passwd" />
+    <div id="go"></div>
+    <div id="goloader"></div>
+</div>
+<div id="header">
+    <div id="external"></div>
+    <div id="logo"></div>
+    <div id="login"></div>
+    <div id="loggedin">
+        <p id="welcome">Welcome, <strong>{{username}}</strong></p>
+        <div id="submit"></div>
+        <div id="logout"></div>
+    </div>
+</div>
+<nav>
+    <ul>
+        <li id="tabhot" class="navli hot selected">
+            <div class="icon"></div>
+            Hot
+        </li>
+        <li id="tabnew" class="navli new">
+            <div class="icon"></div>        
+            New
+        </li>
+        <li id="tabrising" class="navli rising">
+            <div class="icon"></div>        
+            Rising
+        </li>
+    </ul>
+    <div id="arrow" class="first"></div>
+    <div class="fade top"></div>
+</nav>
+<div id="content">
+    <div id="mover" class="hot">
+        <div id="hot" class="tab">
+            <div class="loader center"></div>
+        </div>
+        <div id="new" class="tab">
+            <div class="loader center"></div>
+        </div>
+        <div id="rising" class="tab">
+            <div class="loader center"></div>
+        </div>
+    </div>
+</div>
+<div class="fade bottom"></div>
+<div id="displayer">
+    <div id="pageclose"></div>
+    <div class="loader center"></div>
+    <div id="page"></div>
+</div>
+</body>
+</html>

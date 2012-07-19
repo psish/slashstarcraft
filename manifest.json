@@ -1,0 +1,13 @@
+{
+    "name": "/starcraft",
+    "version": "1.0",
+    "icons": {
+        "19"    : "images/icons/19x19.png", 
+        "29"    : "images/icons/29x29.png",
+        "42"    : "images/icons/42x42.png",
+        "256"   : "images/icons/256x256.png"
+    },
+    "description": "Get your daily dose of r/starcraft like a real nerd-baller.",
+    "window": "window.html",
+    "background": "background.html"
+}
