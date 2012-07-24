@@ -33,7 +33,7 @@ var UI = {
             } else if (el && el.id == 'logout') {
                 this.Login.logout();
             } else if (el && el.id == 'pageclose') {
-                this.closeDisplayer();
+                this.Page.close();
             }
 
             this.clickCleaner(el);
@@ -243,37 +243,8 @@ var UI = {
 
         var id = parent.get('id').split('vote-')[1];
 
-        _.rpcArgs('Starcraft.vote', id, vote);
+        Starcraft.vote(id, vote);
     
-    },
-
-    openDisplayer: function openDisplayer()
-    {
-
-        $('displayer').addClass('display');
-        var y = window.innerHeight;
-        $('displayer').setStyle('height', y - 52);
-        (function() {
-
-            $('page').empty();
-            $0('#displayer .loader').removeClass('hide');
-            $('displayer').addClass('show');
-
-        }).delay(10);
-
-    },
-
-    closeDisplayer: function closeDisplayer()
-    {
-
-        $('displayer').removeClass('show');
-        (function() {
-
-            $('page').empty();
-            $('displayer').removeClass('display');
-
-        }).delay(500);
-
     }
 
 };

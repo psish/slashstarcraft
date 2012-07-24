@@ -13,7 +13,7 @@ var Starcraft = {
 
             _.debug('[BACKGROUND] Received "Hot" data.', data);
             this.data.hot = data;
-            _.rpcArgs('Events.displayThreads', 'hot');
+            Events.displayThreads('hot');
 
         }.bind(this), function() {});
 
@@ -21,7 +21,7 @@ var Starcraft = {
 
             _.debug('[BACKGROUND] Received "New" data.', data);
             this.data.new = data;
-            _.rpcArgs('Events.displayThreads', 'new');
+            Events.displayThreads('new');
 
         }.bind(this), function() {});
 
@@ -29,7 +29,7 @@ var Starcraft = {
 
             _.debug('[BACKGROUND] Received "Rising" data.', data);
             this.data.rising = data;
-            _.rpcArgs('Events.displayThreads', 'rising');
+            Events.displayThreads('rising');
 
         }.bind(this), function() {});
     
@@ -41,12 +41,12 @@ var Starcraft = {
         this.reddit.login(login, passwd, function(data) {
 
             _.debug('[BACKGROUND] Login success!');
-            _.rpcArgs('Events.loginSuccess', data);
+            Events.loginSuccess(data);
 
         }, function(data) {
 
             _.debug('[BACKGROUND] Login failure :(');
-            _.rpc('Events.loginFailure()');            
+            Events.loginFailure();            
 
         });
     
@@ -66,7 +66,7 @@ var Starcraft = {
 
         this.reddit.page(url, function(data) {
 
-            _.rpcArgs('Events.page', data);
+            Events.page(data);
 
         }, function(data) {});
 

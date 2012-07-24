@@ -8,6 +8,5 @@
         "256"   : "images/icons/256x256.png"
     },
     "description": "Get your daily dose of r/starcraft like a real nerd-baller.",
-    "window": "window.html",
-    "background": "background.html"
+    "window": "index.html"
 }

@@ -111,9 +111,9 @@ Thread.prototype.handleLink = function handleLink(url)
 Thread.prototype.redditLink = function redditLing(url)
 {
 
-    UI.openDisplayer();
+    UI.Page.open();
 
-    _.rpcArgs('Starcraft.page', url);
+    Starcraft.page(url);
 
 };
 
@@ -181,111 +181,10 @@ Thread.prototype.getEvent = function getEvent(title)
 {
 
     var title = title.toUpperCase();
-    var events = {
-        // TODO: GD, KSL, OSL
-        GSL: [
-            'GSL',
-            'GOMTV STARCRAFT LEAGUE',
-            'GOM.TV STARCRAFT LEAGUE',
-            'CODE S',
-            'CODE A'
-        ],
-        GSTL: [
-            'GSTL',
-            'GOMTV STARCRAFT TEAM LEAGUE',
-            'GOM.TV STARCRAFT TEAM LEAGUE'
-        ],
-        MLG: [
-            'MLG',
-            'MAJOR LEAGUE GAMING'
-        ],
-        DREAMHACK: [
-            'DREAMHACK'
-        ],
-        NASL: [
-            'NASL',
-            'NORTH AMERICAN STARLEAGUE',
-            'NORTH AMERICAN STAR LEAGUE',
-            'NASTL',
-            'NORTH AMERICAN STAR TEAM LEAGUE'
-        ],
-        IPL: [
-            'IPL',
-            'IGN PRO LEAGUE'
-        ],
-        IRONSQUID: [
-            'IRON SQUID',
-            'IRONSQUID'
-        ],
-        HSC: [
-            'HSC',
-            'HOME STORY CUP',
-            'HOMESTORY CUP',
-            'HOMESTORYCUP'
-        ],
-        DAY9: [
-            'DAY9',
-            'DAY[9]',
-            'AFTER HOURS GAMING',
-            'AFTERHOURS GAMING',
-            'AHGL',
-        ],
-        ASSEMBLY: [
-            'ASSEMBLY'        
-        ],
-        BLIZZCON: [
-            'BLIZZCON'
-        ],
-        BNET: [
-            'BNET WORLD CHAMPIONSHIP',
-            'B.NET WORLD CHAMPIONSHIP',            
-            'BATTLENET WORLD CHAMPIONSHIP',
-            'BATTLE.NET WORLD CHAMPIONSHIP',
-            'STARCRAFT2 WORLD CHAMPIONSHIP',
-            'STARCRAFT II WORLD CHAMPIONSHIP',
-            'SC2 WORLD CHAMPIONSHIP SERIES',
-            'SC2 WORLD CHAMPIONSHIP',
-            'SC2WCS',
-            'WCS',
-            'SC2 WCS',
-            'WORLD CHAMPIONSHIP SERIES'
-        ],
-        EG: [
-            'EG MASTERS CUP'
-        ],
-        ESL: [
-            'ESL',
-            'ELECTRONIC SPORTS LEAGUE'
-        ],
-        IEM: [
-            'IEM',
-            'INTEL EXTREME MASTERS'
-        ],
-        REDBULL: [
-            'REDBULL LAN',
-            'RED BULL LAN'
-        ],
-        TSL: [
-            'TSL',
-            'TEAMLIQUID STAR LEAGUE',
-            'TEAM LIQUID STAR LEAGUE',
-            'TEAMLIQUID STARLEAGUE'
-        ],
-        CSL: [
-            'CSL',
-            'COLLEGIATE STARLEAGUE',
-            'COLLEGIATE STAR LEAGUE'
-        ],
-        TAKETV: [
-            'TAKETV',
-            'TAKE TV',
-            'TAKE.TV'
-        ]
-    };
 
-    for (var key in events) {
-        for (var i = 0; i < events[key].length; i++) {
-            if (title.indexOf(events[key][i]) != -1) {
+    for (var key in StarCraftEvents) {
+        for (var i = 0; i < StarCraftEvents[key].length; i++) {
+            if (title.indexOf(StarCraftEvents[key][i]) != -1) {
                 return key;
             }
         }

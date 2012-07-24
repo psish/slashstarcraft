@@ -115,7 +115,7 @@ UI.Login = {
             $('goloader').addClass('show');
             $('login_login').set('disabled', 'disabled');
             $('login_passwd').set('disabled', 'disabled');
-            _.rpcArgs('Starcraft.login', login, passwd);
+            Starcraft.login(login, passwd);
         }
     
     },
@@ -131,7 +131,7 @@ UI.Login = {
         $('loggedin').addClass('show');
         $('welcome').set('html', 
          $('welcome').get('html').replace('{{username}}', data.login));
-        _.rpc('Starcraft.getAll()');
+        Starcraft.getAll();
 
         if (!unsave) {
             ls.set('account', {

@@ -5,7 +5,7 @@ var Events = {
 
         _.debug('[EVENTS] displayThreads '+type+' event catched.');
 
-        var data = _.r('Starcraft.data.' + type, true);
+        var data = Starcraft.data[type];
         if (data) {
             UI.Threads.display(type, data);        
         }
@@ -16,8 +16,7 @@ var Events = {
     {
 
         UI.Login.success(data);
-        _.debug('[EVENTS] Login success!');
-        
+        _.debug('[EVENTS] Login success!');    
     
     },
 
@@ -37,6 +36,23 @@ var Events = {
         var comments = data[1].data.children;
         new Page(item, comments);
 
-    }
+    },
+
+    data: function data()
+    {
+
+        var hot = Starcraft.data.hot;
+
+        if (hot) {
+            this.displayThreads('hot');
+        }
+
+        var news = Starcraft.data.new;
+
+        if (news) {
+            this.displayThreads('new');
+        }
+    
+    },
 
 };
